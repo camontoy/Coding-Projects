@@ -18,10 +18,7 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
 
 function Kylo() {
   return (
-    <div
-      className="todo"
-      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
-    >
+    <div>
       Hi my name is Kylo 
     </div>
   );
