@@ -16,6 +16,17 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
   );
 }
 
+function Kylo() {
+  return (
+    <div
+      className="todo"
+      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+    >
+      Hi my name is Kylo 
+    </div>
+  );
+}
+
 function TodoForm({ addTodo }) {
   const [value, setValue] = React.useState("");
 
@@ -84,6 +95,7 @@ function App() {
           />
         ))}
         <TodoForm addTodo={addTodo} />
+        <Kylo />
       </div>
     </div>
   );
