@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import TodoForm from "./components/TodoForm";
 
 function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
@@ -16,35 +17,27 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
   );
 }
 
-function Kylo() {
-  return (
-    <div>
-      Hi my name is Kylo 
-    </div>
-  );
-}
+// function TodoForm({ addTodo }) {
+//   const [value, setValue] = React.useState("");
 
-function TodoForm({ addTodo }) {
-  const [value, setValue] = React.useState("");
+//   const handleSubmit = e => {
+//     e.preventDefault();
+//     if (!value) return;
+//     addTodo(value);
+//     setValue("");
+//   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (!value) return;
-    addTodo(value);
-    setValue("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="input"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
-    </form>
-  );
-}
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         type="text"
+//         className="input"
+//         value={value}
+//         onChange={e => setValue(e.target.value)}
+//       />
+//     </form>
+//   );
+// }
 
 function App() {
   const [todos, setTodos] = React.useState([
@@ -93,7 +86,6 @@ function App() {
           />
         ))}
         <TodoForm addTodo={addTodo} />
-        <Kylo />
       </div>
     </div>
   );
