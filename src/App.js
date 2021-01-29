@@ -2,20 +2,30 @@ import React from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
 
-function Todo({ todo, index, completeTodo, removeTodo }) {
+function App() {
   return (
-    <div
-      className="todo"
-      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
-    >
-      {todo.text}
-      <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-        <button onClick={() => removeTodo(index)}>x</button>
-      </div>
+    <div className='todo-app'>
+      <TodoList />
     </div>
   );
 }
+
+export default App;
+
+// function Todo({ todo, index, completeTodo, removeTodo }) {
+//   return (
+//     <div
+//       className="todo"
+//       style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+//     >
+//       {todo.text}
+//       <div>
+//         <button onClick={() => completeTodo(index)}>Complete</button>
+//         <button onClick={() => removeTodo(index)}>x</button>
+//       </div>
+//     </div>
+//   );
+// }
 
 // function TodoForm({ addTodo }) {
 //   const [value, setValue] = React.useState("");
@@ -39,56 +49,56 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
 //   );
 // }
 
-function App() {
-  const [todos, setTodos] = React.useState([
-    { 
-      text: "Learn about React",
-      isComplete: false
-  },
-    { 
-      text: "Meet friend for lunch",
-      isCompleted: false 
-    },
-    { 
-      text: "Build really cool todo app",
-      isCompleted: false 
-    }
-  ]);
+// function App() {
+//   const [todos, setTodos] = React.useState([
+//     { 
+//       text: "Learn about React",
+//       isComplete: false
+//   },
+//     { 
+//       text: "Meet friend for lunch",
+//       isCompleted: false 
+//     },
+//     { 
+//       text: "Build really cool todo app",
+//       isCompleted: false 
+//     }
+//   ]);
   
-  const addTodo = text => {
-    const newTodos = [...todos, { text }];
-    setTodos(newTodos);
-  };
+//   const addTodo = text => {
+//     const newTodos = [...todos, { text }];
+//     setTodos(newTodos);
+//   };
 
-  const completeTodo = index => {
-    const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
-    setTodos(newTodos);
-  };
+//   const completeTodo = index => {
+//     const newTodos = [...todos];
+//     newTodos[index].isCompleted = true;
+//     setTodos(newTodos);
+//   };
 
-  const removeTodo = index => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
-  };
+//   const removeTodo = index => {
+//     const newTodos = [...todos];
+//     newTodos.splice(index, 1);
+//     setTodos(newTodos);
+//   };
 
-  return (
-    <div className="app">
-      <div className="todo-list">
-        <div> header!!! </div>
-        {todos.map((todo, index) => (
-          <Todo
-            key={index}
-            index={index}
-            todo={todo}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-          />
-        ))}
-        <TodoList />
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="app">
+//       <div className="todo-list">
+//         <div> header!!! </div>
+//         {todos.map((todo, index) => (
+//           <Todo
+//             key={index}
+//             index={index}
+//             todo={todo}
+//             completeTodo={completeTodo}
+//             removeTodo={removeTodo}
+//           />
+//         ))}
+//         <TodoList />
+//       </div>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
